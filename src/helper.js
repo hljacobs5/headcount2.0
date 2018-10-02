@@ -18,9 +18,23 @@ export default class DistrictRepository {
 
 		}
 
+		dataObject[key].stats[stat.TimeFrame] = Math.round(1000 * stat.Data) / 1000 || 0;
+
 		return dataObject
 		}, {})
 
 	}
+
+	findByName = (location) => {
+		if (!location) {
+			return
+		}
+
+		if (this.stats[location.toUpperCase()]) {
+			return this.stats[location.toUpperCase()]
+		}
+	}
+
+	
 
 }
