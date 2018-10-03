@@ -12,13 +12,13 @@ export default class DistrictRepository {
 
 		if (!dataObject[key]) {
 			dataObject[key] = {
-				location: district.Location,
+				location: district.Location.toUpperCase(),
 				stats: {}
 			}
 
 		}
 
-		dataObject[key].stats[stat.TimeFrame] = Math.round(1000 * stat.Data) / 1000 || 0;
+		dataObject[key].stats[district.TimeFrame] = Math.round(1000 * district.Data) / 1000 || 0;
 
 		return dataObject
 		}, {})
@@ -32,9 +32,8 @@ export default class DistrictRepository {
 
 		if (this.stats[location.toUpperCase()]) {
 			return this.stats[location.toUpperCase()]
-		}
-	}
 
-	
+		}
+	}	
 
 }
