@@ -15,14 +15,12 @@ export default class DistrictRepository {
 				location: district.Location.toUpperCase(),
 				stats: {}
 			}
-
 		}
 
 		dataObject[key].stats[district.TimeFrame] = Math.round(1000 * district.Data) / 1000 || 0;
 
 		return dataObject
 		}, {})
-
 	}
 
 	findByName = (location) => {
@@ -49,5 +47,4 @@ export default class DistrictRepository {
 		})
 		return matches
 	}		
-
 }
