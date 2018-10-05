@@ -1,5 +1,6 @@
 import React from 'react'
 import DistrictCard from './DistrictCard.js'
+import './DistrictContainer.css'
 
 const DistrictContainer = ({ cards }) => {
 	let dataArray = Object.keys(cards).map(key => {
@@ -12,7 +13,7 @@ const DistrictContainer = ({ cards }) => {
 		/>))
 
 		return (
-			<div>
+			<div className='display-cards'>
 				{displayCards}
 			</div>
 	)

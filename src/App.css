@@ -1,1 +1,7 @@
 /*APP COMPONENT RELATED CSS GOES HERE*/
+.App-header {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding-bottom: 2rem;
+}

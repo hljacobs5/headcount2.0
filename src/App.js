@@ -15,7 +15,6 @@ class App extends Component {
 	}
 
 	findCard = (string) => {
-		console.log(string)
 		this.setState({ query: string })
 	}
 
@@ -37,7 +36,7 @@ class App extends Component {
   render() {
     return (
     <div>
-      <header>
+      <header className='App-header'>
       <h1>Welcome To Headcount</h1>
       <Search
       	findCard={this.findCard}
