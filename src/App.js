@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 import DistrictRepository from './helper.js';
 import kinderData from './data/kindergartners_in_full_day_program.js';
 import DistrictContainer from './DistrictContainer.js';
-import Search from './Search.js'
+import Search from './Search.js';
 import './App.css';
 
 class App extends Component {
-	constructor() {
-		super();
-		this.state = {
-			cards: new DistrictRepository(kinderData),
-			query: ''
-		}
-	}
+  constructor() {
+    super();
+	this.state = {
+      cards: new DistrictRepository(kinderData),
+      query: ''
+    };
+  }
 
-	findCard = (string) => {
-		this.setState({ query: string })
-	}
+  findCard = (string) => {
+   this.setState({ query: string });
+  }
 
 	// componentDidMount = () => {
 	// 	this.updateCardInfo()
@@ -33,20 +33,20 @@ class App extends Component {
 	// 	const district = new DistrictRepository(kinderData)
 	// }
 
-  render() {
-    return (
-    <div>
-      <header className='App-header'>
-      <h1>Welcome To Headcount</h1>
-      <Search
-      	findCard={this.findCard}
-      />
-      </header>
-      <DistrictContainer 
+ render() {
+   return (
+     <div>
+       <header className='App-header'>
+         <h1>Welcome To Headcount</h1>
+         <Search
+          findCard={this.findCard}
+         />
+       </header>
+       <DistrictContainer 
       	cards={this.state.cards.findAllMatches(this.state.query)}
-      />
-    </div>
-    );
+       />
+     </div>
+   );
   }
 }
 

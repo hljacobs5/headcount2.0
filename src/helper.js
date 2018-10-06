@@ -46,5 +46,32 @@ export default class DistrictRepository {
 			return match.location.includes(kinderData.toUpperCase())
 		})
 		return matches
+	}
+
+	findAverage = (districtName) => {
+		const upperCaseDistrictName = districtName.toUpperCase()
+		const yearKeys = Object.keys(this.stats[upperCaseDistrictName].stats);
+		let districtSum = yearKeys.reduce((sum, stat) => {
+			sum += this.stats[upperCaseDistrictName].stats[stat]
+			return sum
+		},0);
+		const cardAverage = districtSum / yearKeys.length
+		const roundedCardAverage = Math.round(1000 * cardAverage) / 1000
+		return roundedCardAverage
+	}
+
+	compareDistrictAverages = (districtOne, districtTwo) => {
+		const districtOneValue = this.findAverage(districtOne);
+		const districtTwoValue = this.findAverage(districtTwo);
+		const comparedValue = Math.round(1000 * (districtOneValue/districtTwoValue)) / 1000
+		const result = Object.assign({},
+	 	{
+	 	  [districtOne.toUpperCase()]: districtOneValue, 
+	 	  [districtTwo.toUpperCase()]: districtTwoValue,
+	 	  'compared': comparedValue
+	 	}
+	 )
+		return result
 	}		
+
 }

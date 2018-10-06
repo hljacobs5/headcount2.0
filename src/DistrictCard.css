@@ -11,6 +11,8 @@ h3 {
 
 .card-stats {
 	color: pink;
+	padding-bottom: -1rem;
+
 }
 
 .card-stat {
