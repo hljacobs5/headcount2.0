@@ -1,6 +1,7 @@
 import React from 'react'
 import DistrictCard from '../DistrictCard/DistrictCard.js'
 import './DistrictContainer.css'
+import PropTypes from 'prop-types';
 
 const DistrictContainer = ({ cards, clickedCard }) => {
 	let dataArray = Object.keys(cards).map(key => {
@@ -18,6 +19,11 @@ const DistrictContainer = ({ cards, clickedCard }) => {
 				{displayCards}
 			</div>
 	)
+}
+
+DistrictContainer.propTypes = {
+	cards: PropTypes.array,
+	clickedCard: PropTypes.func
 }
 
 export default DistrictContainer;

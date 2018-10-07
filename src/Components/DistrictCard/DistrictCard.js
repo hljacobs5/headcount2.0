@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import './DistrictCard.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import './DistrictCard.css';
 
 const DistrictCard = ({ cardData, clickedCard }) => {
 
@@ -25,6 +25,11 @@ const DistrictCard = ({ cardData, clickedCard }) => {
 			<h3 className='card-stat'>{statsTwo}</h3>
 		</div>
 	)
+}
+
+DistrictCard.propTypes = {
+	cardData: PropTypes.object,
+	clickedCard: PropTypes.func
 }
 
 export default DistrictCard;
