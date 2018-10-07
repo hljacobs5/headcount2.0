@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import DistrictRepository from './helper.js';
 import kinderData from './data/kindergartners_in_full_day_program.js';
-import DistrictContainer from './DistrictContainer.js';
-import Search from './Search.js';
+import DistrictContainer from './Components/DistrictContainer/DistrictContainer.js';
+import Search from './Components/Search/Search.js';
 import './App.css';
 
 class App extends Component {
@@ -14,24 +14,21 @@ class App extends Component {
     };
   }
 
+  componentDidMount = () => {
+
+  }
+
   findCard = (string) => {
    this.setState({ query: string });
   }
 
-	// componentDidMount = () => {
-	// 	this.updateCardInfo()
-	// }
+  clickedCard = (location) => {
 
-	// updateCardInfo = (string) => {
-	// 	let cardList = district.findAllMatches(string)
+  }
 
-	// 	this.setState({
-	// 		data: cardList
-	// 	})
-	// }
-	// addData() {
-	// 	const district = new DistrictRepository(kinderData)
-	// }
+  addClickedProperty = (location) => {
+  	
+  }
 
  render() {
    return (
@@ -44,6 +41,8 @@ class App extends Component {
        </header>
        <DistrictContainer 
       	cards={this.state.cards.findAllMatches(this.state.query)}
+      	clickedCard={this.clickedCard}
+
        />
      </div>
    );

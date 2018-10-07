@@ -1,8 +1,8 @@
 import React from 'react'
-import DistrictCard from './DistrictCard.js'
+import DistrictCard from '../DistrictCard/DistrictCard.js'
 import './DistrictContainer.css'
 
-const DistrictContainer = ({ cards }) => {
+const DistrictContainer = ({ cards, clickedCard }) => {
 	let dataArray = Object.keys(cards).map(key => {
 		return cards[key]
 	})
@@ -10,6 +10,7 @@ const DistrictContainer = ({ cards }) => {
 		<DistrictCard
 			cardData={card}
 			key={index}
+			clickedCard={clickedCard}
 		/>))
 
 		return (

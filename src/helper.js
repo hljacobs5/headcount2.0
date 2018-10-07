@@ -39,7 +39,7 @@ export default class DistrictRepository {
 		});
 
 		if (!kinderData) {
-		return dataArray 
+		  return dataArray 
 		}
 
 		let matches = dataArray.filter(match => {
